@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+}
+
+.example-card {
+    max-width: 400px;
+    margin-bottom: 50px;
+
+    img {
+
+        height: 324px !important;
+    }
+}
+
+.example-header-image {
+    background-image: url('https://image.flaticon.com/icons/png/512/149/149071.png');
+    background-size: cover;
+}
+
+.mat-card-actions {
+    padding: 0px;
+}
+
+.driving {
+    color: grey;
+}
+
+
+div.sitter-image {
+    height: 46vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 37% 5%;
+}
+
+
+mat-card-subtitle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    div.location {
+        text-align: left;
+    }
+
+    div.updated {
+        text-align: right;
+    }
+}
+
+mat-card-content {
+    p {
+        overflow: hidden;
+        position: relative;
+        line-height: 1.2em;
+        max-height: 3.6em;
+        text-align: justify;
+        margin-right: -1em;
+        padding-right: 1em;
+        padding-top:18px;
+    }
+
+    p+p {
+        margin-top: 10px;
+    }
+
+    p:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    p:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: white;
+    }
+}
+
+button#btnLoginToViewProfile {
+    width: 100%;
+    border: 2px solid #faa200;
+    transition: 0.3s;
+    text-transform: uppercase;
+
+    &:hover {
+        background: #faa200;
+        color: #fff;
+    }
+}
+
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 48%;
+}
+
+.line {
+    animation: expand 1s ease-in-out infinite;
+    border-radius: 10px;
+    display: inline-block;
+    transform-origin: center center;
+    margin: 0 3px;
+    width: 1px;
+    height: 25px;
+}
+
+.line:nth-child(1) {
+    background: #27ae60;
+}
+
+.line:nth-child(2) {
+    animation-delay: 180ms;
+    background: #f1c40f;
+}
+
+.line:nth-child(3) {
+    animation-delay: 360ms;
+    background: #e67e22;
+}
+
+.line:nth-child(4) {
+    animation-delay: 540ms;
+    background: #2980b9;
+}
+
+@keyframes expand {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(2);
+    }
+}
+
+p#loading-sitters {
+    position: absolute;
+    top: 44%;
+    left: 40%;
+}
+
+#searchForSitters {
+    width: 100%;
+
+    span.mat-form-field-label-wrapper,
+    i {
+
+        top: 1.15625em;
+    }
+}

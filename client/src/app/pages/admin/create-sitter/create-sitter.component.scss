@@ -1,0 +1,102 @@
+.dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 200;
+    height: 300px;
+    border: 2px dashed #f16624;
+    border-radius: 5px;
+    background: #fff;
+    margin: 10px 0;
+
+    &:hovering {
+        border: 2px solid #f16624;
+        color: #dadada !important;
+    }
+
+
+    .input-file-container {
+        position: relative;
+        width: 225px;
+    }
+
+    .input-file-trigger {
+        display: flex;
+        padding: 15px;
+        background: #39D2B4;
+        color: #fff;
+        font-size: 1em;
+        transition: all .4s;
+        cursor: pointer;
+    }
+
+    .input-file {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 225px;
+        opacity: 0;
+        padding: 14px 0;
+        cursor: pointer;
+    }
+
+    .input-file:hover+.input-file-trigger,
+    .input-file:focus+.input-file-trigger,
+    .input-file-trigger:hover,
+    .input-file-trigger:focus {
+        background: #34495E;
+        color: #39D2B4;
+    }
+}
+
+
+progress {
+    border-radius: 2px;
+    width: 100%;
+    height: 22px;
+    background-color: grey !important;
+}
+
+progress::-webkit-progress-bar {
+    background-color: grey !important;
+    border-radius: 2px;
+}
+
+// progress::-webkit-progress-value {
+//     border-radius: 2px;
+// }
+
+// progress::-moz-progress-bar {
+//     /* style rules */
+// }
+progress::-webkit-progress-value {
+    transition: width 0.1s ease;
+    background-color: #0091EA !important;
+}
+
+img {
+    width: 250px;
+}
+
+
+.example-form {
+    padding: 30px;
+    min-width: 150px;
+    // max-width: 500px;
+    width: 100%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
+    margin-bottom: 50px;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+td {
+    padding-right: 8px;
+}
+
+div#hide {
+    display: none;
+}

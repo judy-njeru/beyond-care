@@ -1,0 +1,64 @@
+section#banner-section {
+    // background: url(https://4.bp.blogspot.com/_AQ0vcRxFu0A/S9shDGGyMTI/AAAAAAAAAYk/kn3WTkY2LoQ/s1600/IMG_0714.JPG);
+    background: url('../../../assets/images/19753.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+
+    &.hero {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        text-align: left;
+        color: #fff;
+    }
+
+    div.inner {
+        min-height: 600px;
+        position: relative;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+
+        div.banner-text {
+            position: absolute;
+            top: 30%;
+            margin-top: -5em;
+            // background: rgba(255, 255, 255, 0.5);
+            color: #fff;
+            padding: 25px;
+            width: 48%;
+
+
+            h1 {
+                margin: 0px;
+                font-family: 'Roboto Slab', serif;
+                font-weight: 400;
+                font-size: 82px;
+                padding-bottom: 30px;
+                text-transform: capitalize;
+            }
+
+            p {
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 14px;
+            }
+        }
+
+        .example-form {
+            min-width: 150px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .example-full-width {
+            width: 100%;
+        }
+
+
+    }
+}
+
+#btnFindSitter {
+    background: #faa200 !important;
+}

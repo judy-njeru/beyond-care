@@ -1,0 +1,211 @@
+<app-admin-nav></app-admin-nav>
+
+<div class="container">
+  <form
+    class="example-form"
+    [formGroup]="addBabySitterForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="First Name"
+              value=""
+              formControlName="name"
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Age" value="" formControlName="age" />
+            <!-- <mat-hint align="end">{{ sitterAge.value.length }} / 2</mat-hint> -->
+          </mat-form-field>
+          <!-- <mat-form-field class="example-full-width">
+            <input matInput placeholder="Last Name " />
+          </mat-form-field> -->
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <textarea
+          matInput
+          placeholder="Location"
+          formControlName="location"
+          value=""
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea
+          matInput
+          placeholder="Availability"
+          formControlName="availability"
+          value=""
+        ></textarea>
+      </mat-form-field>
+    </p>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="minimum price per hour"
+              value=""
+              formControlName="min_price"
+            />
+            <!-- <mat-hint align="end">{{ minPrice.value.length }} / 3</mat-hint> -->
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="maximum price per hour"
+              value=""
+              formControlName="max_price"
+            />
+            <!-- <mat-hint align="end">{{ maxPrice.value.length }} / 3</mat-hint> -->
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="Reviews"
+              value=""
+              formControlName="reviews"
+            />
+            <!-- <mat-hint align="end" >{{ sitterReviews.value.length }} / 5</mat-hint > -->
+          </mat-form-field>
+        </td>
+
+        <td>
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="Verified"
+              value=""
+              formControlName="verified"
+            />
+            <!-- <mat-hint align="end">{{ verification.value.length }} / 1</mat-hint> -->
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <textarea
+          matInput
+          placeholder="Qoute"
+          value=""
+          formControlName="quote"
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea
+          matInput
+          placeholder="Stengths"
+          value=""
+          formControlName="strengths"
+        ></textarea>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <textarea
+          matInput
+          placeholder="Description"
+          formControlName="description"
+          value=""
+        ></textarea>
+      </mat-form-field>
+    </p>
+
+    <div
+      class="dropzone"
+      dropZone
+      (hovered)="toggleHover($event)"
+      (dropped)="startUpload($event)"
+      [class.hovering]="isHovering"
+    >
+      <h3>AngularFire Drop Zone</h3>
+      <p>Drag and Drop a File</p>
+
+      <div class="input-file-container">
+        <input
+          class="input-file"
+          id="my-file"
+          type="file"
+          (click)="check()"
+          (change)="startUpload($event.target.files)"
+        />
+        <label tabindex="0" for="my-file" class="input-file-trigger"
+          ><i class="material-icons"> cloud_upload </i
+          ><span class="file-label">
+            or choose a file...
+          </span></label
+        >
+      </div>
+    </div>
+
+    <div *ngIf="percentage | async as pct">
+      <progress [value]="pct" max="100"></progress>
+    </div>
+
+    <!-- <button
+      mat-raised-button
+      color="primary"
+      id="btnCreateAuction"
+      [disabled]="isUploading || !isLoading"
+    >
+      Add BabySitter
+    </button> -->
+
+    <button mat-raised-button color="primary" id="btnAddSitter">
+      Add BabySitter
+    </button>
+  </form>
+
+  <div *ngIf="snapshot | async as snap">
+    {{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes }}
+
+    <div *ngIf="downloadURL | async as url">
+      <h3>Results</h3>
+      <img id="upload_image" [src]="url" alt="image upload" />
+      <a [href]="url">Download Me!</a>
+    </div>
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="task.pause()"
+      [disabled]="!isActive(snap)"
+    >
+      Pause
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="task.cancel()"
+      [disabled]="!isActive(snap)"
+    >
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="task.resume()"
+      [disabled]="!(snap?.state === 'paused')"
+    >
+      Resume
+    </button>
+  </div>
+</div>

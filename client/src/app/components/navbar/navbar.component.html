@@ -1,0 +1,53 @@
+<div class="navbar" id="navbar">
+  <mat-toolbar color="primary">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <a mat-button class="logo" routerLink="/">
+      <span>Beyond Care</span>
+    </a>
+    <span class="spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true" class="web-nav-links ">
+        <a
+        mat-button
+        class="page-links"
+        id="btnLogoutUser" (click)="logout()"
+        *ngIf="isLoggedIn"
+        >Logout</a
+      >
+      <a mat-button class="page-links" routerLink="/about-us">Our Story</a>
+      <a mat-button class="page-links" routerLink="/prices">Pricing</a>
+      <a mat-button class="page-links" routerLink="/reviews">Reviews</a>
+      <a mat-button class="page-links" routerLink="/faqs">FAQS</a>
+      <a mat-button class="page-links" routerLink="/contact">Contact</a>
+      <a
+        mat-button
+        class="page-links"
+        id="find-sitter-nav-link"
+        routerLink="/sitters"
+        >find a sitter</a
+      >
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="mobile-nav-container">
+    <mat-sidenav
+      color="primary"
+      #sidenav
+      fxLayout="column"
+      mode="over"
+      opened="false"
+      fxHide.gt-sm="true"
+    >
+      <div fxLayout="column ">
+        <a mat-button routerLink="/about-us">About us</a>
+        <a mat-button routerLink="/prices">Prices</a>
+        <a mat-button routerLink="/start-page">Start page</a>
+        <a mat-button routerLink="/offer">Offer</a>
+        <a mat-button routerLink="/contact">Contact</a>
+      </div>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>

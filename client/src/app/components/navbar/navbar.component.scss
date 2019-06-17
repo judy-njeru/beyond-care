@@ -1,0 +1,78 @@
+div.navbar {
+    position: relative;
+    top: 0;
+    padding: 0;
+    z-index: 1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-bottom: 100px;
+
+    .logo {
+        font-size: 150%;
+    }
+
+    .mat-toolbar {
+        height: 7vh;
+        width: 100vw;
+        padding: 42px 20px 42px 20px;
+    }
+
+    div {
+        overflow: inherit;
+    }
+
+    mat-sidenav-container {
+        // height: auto !important;
+        // min-width: auto !important;
+        // width: auto !important;
+    }
+
+
+    div.web-nav-links {
+        .page-links {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+
+            &#find-sitter-nav-link {
+                border: 2px solid #fff;
+                border-radius: 0px;
+
+                &:hover {
+                    color: rgb(31, 30, 30);
+                    background: #fff;
+                }
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 110%;
+        white-space: normal;
+    }
+
+    button {
+        font-size: 110%;
+        min-width: min-content;
+    }
+
+    .example-icon {
+        padding: 0 14px;
+    }
+
+    .spacer {
+        flex: 1 1 auto;
+    }
+
+    .mat-sidenav-content {
+        font-size: 200%;
+        text-align: center;
+    }
+
+    a{
+        &:hover {
+            color: #fff;
+        }
+    }
+}

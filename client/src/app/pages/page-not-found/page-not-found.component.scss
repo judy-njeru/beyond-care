@@ -1,0 +1,86 @@
+$purple: #faa200;
+$lightpurple: #ffc14f;
+$pink: #f5ca7b;
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif');
+@import url('https://use.fontawesome.com/releases/v5.0.8/css/all.css');
+
+html {
+  box-sizing: border-box;
+}
+
+html,body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #efefef;
+  font-family: IBM Plex serif;
+  font-size: 20px;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.left {
+  font-size: 200px;
+  color: $purple;
+  text-shadow: 1px 1px 10px rgba($lightpurple,1);
+  animation: 1.2s ease-out 0s 1 slideInFromLeft;
+  margin-bottom: -70px;
+}
+
+.right {
+  animation: 1.2s ease-out 0s 1 slideInFromRight;
+  color: $purple;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  
+  60% {
+    color: $pink;
+  }
+  100% {
+    transform: scale(1.2);
+    color: $lightpurple;
+  }
+}
+
+.fa-heart {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: $pink;
+  font-size: 50px;
+  top: 200px;
+  animation: grow 1s ease infinite;
+}
+
+

@@ -1,0 +1,67 @@
+<app-admin-nav></app-admin-nav>
+
+<div class="container">
+  <mat-form-field>
+    <input
+      matInput
+      (keyup)="applyFilter($event.target.value)"
+      placeholder="Filter"
+    />
+  </mat-form-field>
+  <!-- <div *ngFor="let sitter of allSitters">
+    <h1>{{ sitter.data.name }}</h1>
+  </div> -->
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.data.name }}</td>
+    </ng-container>
+
+    <!-- location Column -->
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef>Location</th>
+      <td mat-cell *matCellDef="let element">{{ element.data.location }}</td>
+    </ng-container>
+
+    <!-- reviews Column -->
+    <ng-container matColumnDef="reviews">
+      <th mat-header-cell *matHeaderCellDef>Reviews</th>
+      <td mat-cell *matCellDef="let element">{{ element.data.reviews }}</td>
+    </ng-container>
+
+    <!-- reviews Column -->
+    <ng-container matColumnDef="verified">
+      <th mat-header-cell *matHeaderCellDef>Verified</th>
+      <td mat-cell *matCellDef="let element">{{ element.data.verified }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Edit</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon (click)="startEdit(i, element.id, element.data.verified)" class="btnUpdateSitter">
+          edit</mat-icon
+        >
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>Delete</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon (click)="deleteItem(i, element.id, element.data.name)" class="btnDeleteSitter">
+          delete</mat-icon
+        >
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

@@ -1,0 +1,190 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400');
+
+body {
+    background: #f9f9f9;
+
+    .mat-toolbar {
+        height: 7vh;
+        width: 100vw;
+        background: transparent !important;
+    }
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+mat-sidenav-content,
+mat-sidenav-content.mat-drawer-content {
+    height: 100vh;
+}
+
+.mat-drawer-container {
+    background-color: none !important;
+
+}
+
+.mat-drawer-content {
+    height: auto !important;
+}
+
+.mat-form-field-label-wrapper {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+    // top: -0.34375em !important;
+    color: #fff !important;
+}
+
+#searchSitterInput {
+    width: 100%;
+
+    .mat-form-field-label,
+    .mat-form-field._mat-animation-noopable .mat-form-field-ripple {
+        color: #fff;
+    }
+
+    .mat-form-field-underline {
+        background-color: rgba(255, 255, 255, 1);
+    }
+}
+
+body.sitters,
+body.admin-create-sitter,
+.login {
+    div.navbar {
+        position: relative;
+        padding: 0;
+        z-index: 1;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+
+        .logo {
+            font-size: 150%;
+        }
+
+        .mat-toolbar {
+            height: 7vh;
+            width: 100vw;
+            background: #faa200 !important;
+        }
+
+        div {
+            overflow: inherit;
+        }
+
+        mat-sidenav-container {
+            // height: auto !important;
+            // min-width: auto !important;
+            // width: auto !important;
+        }
+
+
+        div.web-nav-links {
+            .page-links {
+                font-size: 14px;
+                font-weight: 500;
+                text-transform: uppercase;
+
+                &#find-sitter-nav-link {
+                    border: 2px solid #fff;
+                    border-radius: 0px;
+
+                    &:hover {
+                        color: rgb(31, 30, 30);
+                        background: #fff;
+                    }
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 110%;
+            white-space: normal;
+        }
+
+        button {
+            font-size: 110%;
+            min-width: min-content;
+        }
+
+        .example-icon {
+            padding: 0 14px;
+        }
+
+        .spacer {
+            flex: 1 1 auto;
+        }
+
+        .mat-sidenav-content {
+            font-size: 200%;
+            text-align: center;
+        }
+    }
+
+    .mat-card-header-text {
+        width: 100%;
+    }
+
+    #searchForSitters {
+        width: 100%;
+        margin-bottom: 40px;
+
+        span.sitterSearchInput {
+            position: relative;
+
+            i {
+                position: absolute;
+                top: -0.26rem;
+            }
+
+        }
+
+        span.mat-form-field-label-wrapper {
+            top: -1rem !important;
+            left: 2.3rem !important;
+            font-size: 15px;
+        }
+
+        .mat-input-element {
+            padding-left: 36px;
+        }
+
+    }
+}
+
+body.admin-create-sitter {
+    overflow-y: scroll !important;
+}
+
+body.profile {
+    overflow: hidden;
+
+    div.navbar {
+        margin-bottom: 0px;
+
+        .mat-toolbar {
+            height: 7vh;
+            width: 100vw;
+            background: #faa200 !important;
+        }
+    }
+}
+
+.mat-dialog-content {
+    overflow: unset !important;
+}
+
+
+body {
+    &.prices, &.about-us, &.reviews, &.contact, &.faqs {
+        .mat-toolbar{
+            background: #faa200 !important;
+        }
+    }
+}
